@@ -1,0 +1,19 @@
+body {
+  padding-top: 50px;
+}
+
+
+
+body > .container {
+  padding-bottom: 20px;
+}
+
+table {
+  border-collapse: ;
+  border-spacing: ;
+}
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
