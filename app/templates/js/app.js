@@ -17,10 +17,22 @@
               scalebarUnit: "dual"
             });
 
-           $(document).ready(function(){
+            var clearBaseMap = function(map){
+              if(map.basemapLayerIds.length > 0){
+                dojo.forEach(map.basemapLayerIds, function(lid){
+                  console.log('removing ' + lid);
+                  map.removeLayer(map.getLayer(lid));
+                });
+                map.basemapLayerIds = [];
+              }else{
+                map.removeLayer(map.getLayer(map.layerIds[0]));
+              }
+            };
+
+            $(document).ready(function(){
               $("#basemapList li").click(function(e) {
                 var l, options;
-                BootstrapMap.clearBaseMap(map);
+                clearBaseMap(map);
                 switch (e.target.text) {
                   case "Water Color":
                     

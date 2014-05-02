@@ -70,6 +70,19 @@ var BootmapGenerator = yeoman.generators.Base.extend({
     this.copy('gruntfile.js', 'gruntfile.js');
     this.copy('license.txt', 'license.txt');
     this.template('_README.md', 'README.md');
+  }, 
+
+  bootstrapFiles: function() {
+    var cb = this.async();
+    this.remote('Esri', 'bootstrap-map-js', 'master', function (err, remote) {
+      if (err) {
+        return cb(err);
+      }
+      remote.directory('src/css', 'css');
+      remote.directory('src/images', 'images');
+      remote.directory('src/js', 'js');
+      cb();
+    });
   }
 });
 
