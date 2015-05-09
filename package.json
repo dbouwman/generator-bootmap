@@ -2,7 +2,7 @@
   "name": "generator-bootmap",
   "version": "0.0.1",
   "description": "Example generator that creates a simple responsive app that does nothing, but has livereload and deploy to gh-pages setup.",
-  "license": "Apache",
+  "license": "Apache-2.0",
   "main": "app/index.js",
   "repository": "dbouwman/generator-bootmap",
   "author": {
